@@ -1,0 +1,63 @@
+<h3>Lista de Empresas</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Nome</td>
+      <td>Porte</td>
+      <td>Ação</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of listaEmpresas$ | async">
+      <td>{{ row.id }}</td>
+      <td>{{ row.nome }}</td>
+      <td>{{ row.porte }}</td>
+      <td>
+        <button class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#formEditar"
+                type="button"
+                (click)="editar(row.id)">Editar
+        </button>&nbsp;
+        <button class="btn btn-danger"
+                type="button"
+                (click)="excluir(row.id)">Excluir
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="formEditar" tabindex="-1" aria-labelledby="formEditar" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formEditar">Empresa por ID</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="(empresa$ | async) as empresa">
+          <form id="myForm" #f="ngForm" >
+              <div class="col-6">
+                  <label>Id</label>
+                  <input id="id" name="id" [(ngModel)]="empresa.id" class="form-control" type="text">
+              </div>
+              <div class="col-6">
+                  <label>Nome</label>
+                  <input id="nome" name="nome" [(ngModel)]="empresa.nome" class="form-control" type="text">
+              </div>
+              <div class="col-6">
+                  <label>Porte</label>
+                  <input id="porte" name="porte" [(ngModel)]="empresa.porte" class="form-control" type="text">
+              </div>
+
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

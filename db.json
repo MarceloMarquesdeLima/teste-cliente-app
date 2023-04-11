@@ -1,0 +1,39 @@
+{
+  "Empresas": [
+    {
+      "id": 1,
+      "nome": "Empresa 1",
+      "porte": "Pequena"
+    },
+    {
+      "id": 2,
+      "nome": "Empresa 2",
+      "porte": "Grande"
+    },
+    {
+      "id": 3,
+      "nome": "Empresa 3",
+      "porte": "Média"
+    },
+    {
+      "id": 5,
+      "nome": "Empresa 5",
+      "porte": "Pequena"
+    },
+    {
+      "id": 6,
+      "nome": "Empresa 6",
+      "porte": "Pequena"
+    },
+    {
+      "id": 7,
+      "nome": "Empresa 6",
+      "porte": "Pequena"
+    },
+    {
+      "id": 8,
+      "nome": "Empresa 6",
+      "porte": "Pequena"
+    }
+  ]
+}
